@@ -7,16 +7,12 @@ public class App {
 
         @Override
         public void run() {
+//           FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
 
-            for (int i = 0; i < 1000; i++) {
-                System.out.println("Wątek 1: " + i);
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+            SingletonEnum fileWriterSingleton = SingletonEnum.INSTANCE;
 
+           fileWriterSingleton.write("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "plik.temp");
+            System.out.println(fileWriterSingleton);
         }
     }
 
@@ -24,32 +20,25 @@ public class App {
 
         @Override
         public void run() {
+//            FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
 
-            for (int i = 0; i < 1000; i++) {
-                System.out.println("Wątek 2: " + i);
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-
+            SingletonEnum fileWriterSingleton = SingletonEnum.INSTANCE;
+            fileWriterSingleton.write("fffffffffffffffffffffffff", "plik.temp");
+            System.out.println(fileWriterSingleton);
         }
+
+
     }
 
     static class Task3 implements Runnable {
 
         @Override
         public void run() {
-            for (int i = 0; i < 1000; i++) {
-                System.out.println("Wątek 3: " + i);
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+//            FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
+
+            SingletonEnum fileWriterSingleton = SingletonEnum.INSTANCE;
+            fileWriterSingleton.write("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "plik.temp");
+            System.out.println(fileWriterSingleton);
         }
     }
 
@@ -58,18 +47,18 @@ public class App {
 
         @Override
         public void run() {
-            for (int i = 0; i < 1000; i++) {
-                System.out.println("Wątek 4: " + i);
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+//            FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
+
+            SingletonEnum fileWriterSingleton = SingletonEnum.INSTANCE;
+            fileWriterSingleton.write("lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll", "plik.temp");
+            System.out.println(fileWriterSingleton);
+
         }
     }
 
     public static void main(String[] args) {
+
+
 
         Task1 task1 = new Task1();
         Task2 task2 = new Task2();
@@ -86,6 +75,16 @@ public class App {
         thread2.start();
         thread3.start();
         thread4.start();
+
+
+        
+//        FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
+//        FileWriterSingleton fileWriterSingleton2 = FileWriterSingleton.getInstance();
+//        FileWriterSingleton fileWriterSingleton3 = FileWriterSingleton.getInstance();
+//
+//        System.out.println(fileWriterSingleton);
+//        System.out.println(fileWriterSingleton2);
+//        System.out.println(fileWriterSingleton3);
 
     }
 }
